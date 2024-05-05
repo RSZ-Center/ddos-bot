@@ -17,7 +17,7 @@ module.exports = {
 
         if (!args[0] || !ipRegex.test(args[0])) return message.channel.send({embeds: [noip]})
 
-        const res = await fetch(`http://ip-api.com/json/${ip}`);
+        const res = await fetch(`http://ip-api.com/json/${args[0]}`);
         const json = await res.json();
 
         if (json.status !== "success") return message.channel.send({embeds: [embed]})
